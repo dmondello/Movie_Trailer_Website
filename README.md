@@ -1,4 +1,4 @@
-Project: Movie Trailer Website  - [Daniele Mondello, email:info@danielemondello.it]
+Project: Movie Trailer Website  
 ================================
 A python script to showin a web page my favourite movies
 
@@ -31,3 +31,4 @@ Miscellaneous
 2. Some plugin for Chrome can do some warning when launch entertainment_center.py.
    You have to disable them (es:Pushbullet, Clipboard History 2).
 
+Daniele Mondello, email:info@danielemondello.it
