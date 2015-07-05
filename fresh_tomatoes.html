@@ -1,0 +1,266 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin: 20px 0;
+            width: 107px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="img/close.png"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">My Favourite Movies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4">
+   <div class="text-center">
+        <h2>Forrest Gump</h2>
+        <img src="https://www.movieposter.com/posters/archive/main/70/MPW-35447" width="220" height="342"><br><br>
+   </div>
+
+   <div class="text-left">
+           Forrest Gump, while not intelligent, has accidentally been present at many historic moments, but his true love, Jenny Curran, eludes him. <br> <br>
+        <b>Director:</b> Robert Zemeckis <br>
+        <b>Genre:</b> Drama <br>
+        <b>Year:</b> 1994 <br>
+        <b>My Vote:</b> 5/5
+   </div>
+
+   <div>
+    <div class="movie-tile" data-trailer-youtube-id="uPIEn0M8su0" data-toggle="modal" data-target="#trailer">
+     <button class="btn btn-danger">Watch Trailer</button>
+    </div>
+
+     <a href="http://www.imdb.com/title/tt0109830/?ref_=fn_al_tt_2" target="_blank" ><img src="img/imdb.png"></a>
+
+   </div>
+
+</div>
+
+
+<div class="col-md-6 col-lg-4">
+   <div class="text-center">
+        <h2>Hair</h2>
+        <img src="http://curiosando708090.altervista.org/wp-content/uploads/2012/08/hair.jpg" width="220" height="342"><br><br>
+   </div>
+
+   <div class="text-left">
+           Claude leaves the family ranch in Oklahoma for New York where he is rapidly indoctrinated into the outh subculture and subsequently drafted. <br> <br>
+        <b>Director:</b> Milos Forman <br>
+        <b>Genre:</b> Musical <br>
+        <b>Year:</b> 1979 <br>
+        <b>My Vote:</b> 4/5
+   </div>
+
+   <div>
+    <div class="movie-tile" data-trailer-youtube-id="tC0FRKPuZM4" data-toggle="modal" data-target="#trailer">
+     <button class="btn btn-danger">Watch Trailer</button>
+    </div>
+
+     <a href="http://www.imdb.com/title/tt0079261/?ref_=fn_al_tt_1" target="_blank" ><img src="img/imdb.png"></a>
+
+   </div>
+
+</div>
+
+
+<div class="col-md-6 col-lg-4">
+   <div class="text-center">
+        <h2>Apollo 13</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Apollo_thirteen_movie.jpg" width="220" height="342"><br><br>
+   </div>
+
+   <div class="text-left">
+           NASA must devise a strategy to return Apollo 13 to Earth safely after the spacecraft undergoes massive internal damage  <br> <br>
+        <b>Director:</b> Ron Howard <br>
+        <b>Genre:</b> Drama <br>
+        <b>Year:</b> 1995 <br>
+        <b>My Vote:</b> 5/5
+   </div>
+
+   <div>
+    <div class="movie-tile" data-trailer-youtube-id="Y_rkXC9HH9k" data-toggle="modal" data-target="#trailer">
+     <button class="btn btn-danger">Watch Trailer</button>
+    </div>
+
+     <a href="http://www.imdb.com/title/tt0112384/?ref_=fn_al_tt_1" target="_blank" ><img src="img/imdb.png"></a>
+
+   </div>
+
+</div>
+
+
+<div class="col-md-6 col-lg-4">
+   <div class="text-center">
+        <h2>Back to the Future</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg" width="220" height="342"><br><br>
+   </div>
+
+   <div class="text-left">
+           A young man is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his friend, Dr. Emmett Brown. <br> <br>
+        <b>Director:</b> Robert Zemeckis <br>
+        <b>Genre:</b> Adventure <br>
+        <b>Year:</b> 1985 <br>
+        <b>My Vote:</b> 5/5
+   </div>
+
+   <div>
+    <div class="movie-tile" data-trailer-youtube-id="qvsgGtivCgs" data-toggle="modal" data-target="#trailer">
+     <button class="btn btn-danger">Watch Trailer</button>
+    </div>
+
+     <a href="http://www.imdb.com/title/tt0088763/?ref_=nv_sr_2" target="_blank" ><img src="img/imdb.png"></a>
+
+   </div>
+
+</div>
+
+
+<div class="col-md-6 col-lg-4">
+   <div class="text-center">
+        <h2>Pulp Fiction</h2>
+        <img src="http://ia.media-imdb.com/images/M/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SY317_CR4,0,214,317_AL_.jpg" width="220" height="342"><br><br>
+   </div>
+
+   <div class="text-left">
+           The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption. <br> <br>
+        <b>Director:</b> Quentin Tarantino <br>
+        <b>Genre:</b> Crime <br>
+        <b>Year:</b> 1994 <br>
+        <b>My Vote:</b> 5/5
+   </div>
+
+   <div>
+    <div class="movie-tile" data-trailer-youtube-id="s7EdQ4FqbhY" data-toggle="modal" data-target="#trailer">
+     <button class="btn btn-danger">Watch Trailer</button>
+    </div>
+
+     <a href="http://www.imdb.com/title/tt0110912/?ref_=fn_al_tt_1" target="_blank" ><img src="img/imdb.png"></a>
+
+   </div>
+
+</div>
+
+
+<div class="col-md-6 col-lg-4">
+   <div class="text-center">
+        <h2>Alien</h2>
+        <img src="http://ia.media-imdb.com/images/M/MV5BMTU1ODQ4NjQyOV5BMl5BanBnXkFtZTgwOTQ3NDU2MTE@._V1_SX214_AL_.jpg" width="220" height="342"><br><br>
+   </div>
+
+   <div class="text-left">
+           The vessel Nostromo receives a distress call from an planet. After searching for survivors, the crew heads realize that a deadly bioform has joined them. <br> <br>
+        <b>Director:</b> Ridley Scott <br>
+        <b>Genre:</b> Sci-FI <br>
+        <b>Year:</b> 1979 <br>
+        <b>My Vote:</b> 4/5
+   </div>
+
+   <div>
+    <div class="movie-tile" data-trailer-youtube-id="DGAHtWV7Ua8" data-toggle="modal" data-target="#trailer">
+     <button class="btn btn-danger">Watch Trailer</button>
+    </div>
+
+     <a href="http://www.imdb.com/title/tt0078748/?ref_=fn_al_tt_1" target="_blank" ><img src="img/imdb.png"></a>
+
+   </div>
+
+</div>
+
+
+    </div>
+  </body>
+</html>
