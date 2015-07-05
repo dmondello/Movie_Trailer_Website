@@ -37,8 +37,9 @@ main_page_head = '''
             height: 100%;
         }
         .movie-tile {
-            margin: 20px 0;
+            margin: 20px 10px 20px 68px;
             width: 107px;
+            float:left;
         }
         .movie-tile:hover {
             background-color: #EEE;
@@ -143,7 +144,7 @@ movie_tile_content = '''
      <button class="btn btn-danger">Watch Trailer</button>
     </div>
 
-     <a href="{imdb}" target="_blank" ><img src="img/imdb.png"></a>
+     <a href="{imdb}" target="_blank"><img src="img/imdb.png"></a>
 
    </div>
 
