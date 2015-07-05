@@ -23,7 +23,6 @@ Extra Credit Description
 2. Additional CSS3 to style and button to launch trailer
 3. Add link to IMdb page (Internet Movie DataBase)
 
-
 Miscellaneous
 -------------
 1. If you want change the movies, you have to edit entertainment_center.py.
