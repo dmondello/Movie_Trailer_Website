@@ -140,7 +140,7 @@ movie_tile_content = '''
    </div>
 
    <div>
-    <div class="movie-tile" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+    <div class="movie-tile" data-trailer-youtube-id="{youtube_id}" data-toggle="modal" data-target="#trailer">
      <button class="btn btn-danger">Watch Trailer</button>
     </div>
 
@@ -172,7 +172,7 @@ def create_movie_tiles_content(movies):
             year=movie.year,
             vote=movie.vote,
             imdb=movie.imdb,
-            trailer_youtube_id=trailer_youtube_id
+            youtube_id=trailer_youtube_id
         )
     return content
 
