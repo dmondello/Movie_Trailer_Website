@@ -99,4 +99,3 @@ movies = [
 
 # Call function open_movies_page from fresh_toematoes and pass array movies
 fresh_tomatoes.open_movies_page(movies)
-
