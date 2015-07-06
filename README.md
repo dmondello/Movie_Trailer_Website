@@ -28,7 +28,7 @@ Miscellaneous
 - If you want change the movies, you have to edit entertainment_center.py.
 
 - Some plugin for Chrome can do some warning when launch entertainment_center.py.
-   You have to disable them (es:Pushbullet, Clipboard History 2).
+  You have to disable them (es:Pushbullet, Clipboard History 2).
 
 - Thanx to Concetta Cassataro to support me! 
  
